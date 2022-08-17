@@ -20,7 +20,7 @@ const MyOrder = () => {
 
   // get data from database
   useEffect(() => {
-    fetch(`http://localhost:5000/MyOrders/${currentEmail}`)
+    fetch(`https://intense-forest-82602.herokuapp.com/MyOrders/${currentEmail}`)
       .then((res) => res.json())
       .then((data) => setMyOrders(data));
   }, [isDeleted, currentEmail]);
@@ -29,9 +29,12 @@ const MyOrder = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure to Delete");
     if (proceed) {
-      fetch(`http://localhost:5000/myOrders/order/delete/${id}`, {
-        method: "DELETE",
-      })
+      fetch(
+        `https://intense-forest-82602.herokuapp.com/myOrders/order/delete/${id}`,
+        {
+          method: "DELETE",
+        }
+      )
         .then((res) => res.json())
         .then((result) => {
           if (result.deletedCount) {

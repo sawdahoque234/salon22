@@ -18,7 +18,7 @@ const ManageOrders = () => {
 
   // get data from database
   useEffect(() => {
-    fetch("http://localhost:5000/manageOrders")
+    fetch("https://intense-forest-82602.herokuapp.com/manageOrders")
       .then((res) => res.json())
       .then((data) => setAllOrders(data));
   }, [isDeleted, isUpdated]);
@@ -27,9 +27,12 @@ const ManageOrders = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure to Delete");
     if (proceed) {
-      fetch(`http://localhost:5000/allOrders/order/delete/${id}`, {
-        method: "DELETE",
-      })
+      fetch(
+        `https://intense-forest-82602.herokuapp.com/allOrders/order/delete/${id}`,
+        {
+          method: "DELETE",
+        }
+      )
         .then((res) => res.json())
         .then((result) => {
           if (result.deletedCount) {
@@ -44,12 +47,15 @@ const ManageOrders = () => {
 
   // // update
   const handleUpdateStatus = (id) => {
-    fetch(`http://localhost:5000/orderStatus/update/${id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-    })
+    fetch(
+      `https://intense-forest-82602.herokuapp.com/orderStatus/update/${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+      }
+    )
       // .then()
 
       .then((res) => res.json())

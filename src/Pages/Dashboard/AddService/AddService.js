@@ -20,7 +20,10 @@ const AddService = () => {
   const handleServiceSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/addService", newServiceData)
+      .post(
+        "https://intense-forest-82602.herokuapp.com/addService",
+        newServiceData
+      )
       .then((res) => {
         const success = res.data.insertedId;
         console.log(success);

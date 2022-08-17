@@ -18,13 +18,18 @@ const Review = () => {
   // send data backend
   const handleReviewSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5000/addReview", newReviewData).then((res) => {
-      const success = res.data.insertedId;
+    axios
+      .post(
+        "https://intense-forest-82602.herokuapp.com/addReview",
+        newReviewData
+      )
+      .then((res) => {
+        const success = res.data.insertedId;
 
-      if (success) {
-        setSuccess("Add Review Success");
-      }
-    });
+        if (success) {
+          setSuccess("Add Review Success");
+        }
+      });
   };
 
   return (

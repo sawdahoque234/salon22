@@ -26,7 +26,7 @@ const Order = ({ id }) => {
 
   // get data from database
   useEffect(() => {
-    fetch("http://localhost:5000/service")
+    fetch("https://intense-forest-82602.herokuapp.com/service")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
@@ -55,12 +55,17 @@ const Order = ({ id }) => {
     newServiceData.serviceName = name;
     newServiceData.status = "pending";
 
-    axios.post("http://localhost:5000/addOrder", newServiceData).then((res) => {
-      const success = res.data.insertedId;
-      if (success) {
-        setSuccess("Order Complete");
-      }
-    });
+    axios
+      .post(
+        "https://intense-forest-82602.herokuapp.com/addOrder",
+        newServiceData
+      )
+      .then((res) => {
+        const success = res.data.insertedId;
+        if (success) {
+          setSuccess("Order Complete");
+        }
+      });
   };
 
   return (

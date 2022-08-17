@@ -7,7 +7,7 @@ const Reviews = () => {
 
   // get data from database
   useEffect(() => {
-    fetch("http://localhost:5000/review")
+    fetch("https://intense-forest-82602.herokuapp.com/review")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
