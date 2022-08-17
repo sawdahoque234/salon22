@@ -38,4 +38,4 @@
 - Express.js
 - MongoDB
 - Heroku (Server Deploy)
-- [Server](https://homelandproject-bb634.web.app/)
+- [Server](https://github.com/sawdahoque234/salon22-server)
