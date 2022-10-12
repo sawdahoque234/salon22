@@ -8,7 +8,6 @@
 - Book Service
 - Order Review
 - Order Cancel
-- Payment using Card
 - Check Status of Order (pending, confirm etc)
 - Adding a review
 
