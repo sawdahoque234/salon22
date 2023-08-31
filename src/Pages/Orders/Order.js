@@ -26,7 +26,7 @@ const Order = ({ id }) => {
 
   // get data from database
   useEffect(() => {
-    fetch("https://intense-forest-82602.herokuapp.com/service")
+    fetch("https://sallonserver.onrender.com/service")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
@@ -56,10 +56,7 @@ const Order = ({ id }) => {
     newServiceData.status = "pending";
 
     axios
-      .post(
-        "https://intense-forest-82602.herokuapp.com/addOrder",
-        newServiceData
-      )
+      .post("https://sallonserver.onrender.com/addOrder", newServiceData)
       .then((res) => {
         const success = res.data.insertedId;
         if (success) {

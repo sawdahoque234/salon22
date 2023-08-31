@@ -11,7 +11,7 @@ const MakeAdmin = () => {
 
   const handleAddAdmin = (e) => {
     const user = { email };
-    fetch("https://intense-forest-82602.herokuapp.com/users/admin", {
+    fetch("https://sallonserver.onrender.com/users/admin", {
       method: "PUT",
       headers: {
         "content-type": "application/json",

@@ -109,7 +109,7 @@ const useFirebase = () => {
   // save user info into database
   const userInfoSaveDB = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("https://intense-forest-82602.herokuapp.com/users", {
+    fetch("https://sallonserver.onrender.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",
@@ -120,7 +120,7 @@ const useFirebase = () => {
 
   // get admin
   useEffect(() => {
-    fetch(`https://intense-forest-82602.herokuapp.com/users/${user.email}`)
+    fetch(`https://sallonserver.onrender.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user?.email]);

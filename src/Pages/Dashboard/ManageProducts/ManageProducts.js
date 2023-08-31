@@ -17,7 +17,7 @@ const ManageProducts = () => {
 
   // get data from database
   useEffect(() => {
-    fetch("https://intense-forest-82602.herokuapp.com/manageService")
+    fetch("https://sallonserver.onrender.com/manageService")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [isDeleted]);
@@ -27,7 +27,7 @@ const ManageProducts = () => {
     const proceed = window.confirm("Are you sure to Delete");
     if (proceed) {
       fetch(
-        `https://intense-forest-82602.herokuapp.com/alService/service/delete/${id}`,
+        `https://sallonserver.onrender.com/alService/service/delete/${id}`,
         {
           method: "DELETE",
         }

@@ -19,10 +19,7 @@ const Review = () => {
   const handleReviewSubmit = (e) => {
     e.preventDefault();
     axios
-      .post(
-        "https://intense-forest-82602.herokuapp.com/addReview",
-        newReviewData
-      )
+      .post("https://sallonserver.onrender.com/addReview", newReviewData)
       .then((res) => {
         const success = res.data.insertedId;
 

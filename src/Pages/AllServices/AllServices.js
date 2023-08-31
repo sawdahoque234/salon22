@@ -10,7 +10,7 @@ const AllServices = () => {
 
   // get data from database
   useEffect(() => {
-    fetch("https://intense-forest-82602.herokuapp.com/service")
+    fetch("https://sallonserver.onrender.com/service")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
